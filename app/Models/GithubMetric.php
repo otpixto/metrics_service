@@ -9,5 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class GithubMetric extends Model
 {
-
+    protected $fillable = [
+        'total_commits_amount'
+    ];
 }

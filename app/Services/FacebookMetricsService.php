@@ -54,7 +54,7 @@ class FacebookMetricsService extends MetricsService
         if ($metricsArray) {
             FacebookMetric::create($metricsArray);
 
-            parent::sendDataToDatabox($metricsArray);
+            parent::sendDataToDatabox($metricsArray, FacebookMetricsNamesEnum::class);
         }
 
         return $metricsArray;

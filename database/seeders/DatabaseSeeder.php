@@ -11,9 +11,10 @@ use App\Models\GithubMetric;
 use App\Models\Organization;
 use App\Models\ProviderMetricsRequestLog;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
+
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,7 +24,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $now = Carbon::now();
-        
+
         FacebookMetric::create([
             'total_friends_amount' => 86,
             'photo_width' => 150,
@@ -33,9 +34,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         GithubMetric::create([
-            'total_friends_amount' => 86,
-            'photo_width' => 150,
-            'photo_height' => 150,
+            'total_commits_amount' => 7,
             'created_at' => $now,
             'updated_at' => $now,
         ]);

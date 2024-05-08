@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Enums\FacebookMetricsNamesEnum;
 use App\Helpers\DataboxHelper;
 use App\Models\DataboxMetricsRequestLog;
 use App\Models\ProviderMetricsRequestLog;
@@ -22,7 +21,7 @@ abstract class MetricsService
         $this->request = $request;
     }
 
-    protected function sendDataToDatabox(array $metricsArray): void
+    protected function sendDataToDatabox(array $metricsArray, string $metricsEnum): void
     {
         $token = getenv("DATABOX_PUSH_TOKEN");
 
@@ -30,7 +29,7 @@ abstract class MetricsService
         $nowDate = Carbon::now();
 
         foreach ($metricsArray as $metricKey => $metricValue) {
-            $databoxMetricKey = FacebookMetricsNamesEnum::getDataboxMetricFromFacebookMetric($metricKey);
+            $databoxMetricKey = $metricsEnum::getDataboxMetricFromProviderMetric($metricKey);
             try {
                 $result = $databoxHelper->push($databoxMetricKey, $metricValue, $nowDate);
             } catch (Exception $e) {

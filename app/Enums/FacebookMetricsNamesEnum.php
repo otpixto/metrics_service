@@ -8,7 +8,7 @@ enum FacebookMetricsNamesEnum: string
     case PHOTO_WIDTH = 'photo_width';
     case PHOTO_HEIGHT = 'photo_height';
 
-    public static function getDataboxMetricFromFacebookMetric(string $facebookMetricName): string
+    public static function getDataboxMetricFromProviderMetric(string $facebookMetricName): string
     {
         $facebookToDataboxMetricMap = [
             self::TOTAL_FRIENDS_AMOUNT->value => DataboxMetricsNamesEnum::FACEBOOK_TOTAL_FRIENDS_AMOUNT->value,

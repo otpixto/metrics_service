@@ -21,9 +21,7 @@ return new class extends Migration {
 
         Schema::create('github_metrics', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('total_friends_amount')->nullable();
-            $table->integer('photo_width')->nullable();
-            $table->integer('photo_height')->nullable();
+            $table->integer('total_commits_amount')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

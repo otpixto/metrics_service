@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\CheckDockerEnvironment;
+namespace Tests\DockerEnvironmentTests;
 
 use PDO;
 use PHPUnit\Framework\TestCase;
